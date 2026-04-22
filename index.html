@@ -69,30 +69,14 @@
     z-index: 1;
   }
 
-  /* ============ Orientation handling ============
-     Always render as landscape. If the viewport is portrait (or the
-     artifact viewer is locked portrait), rotate the entire app 90deg
-     so the user sees landscape regardless of how they hold the phone. */
-  @media (orientation: portrait) {
-    #app {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 100vh;
-      width: 100svh;
-      height: 430px;
-      transform: translate(-50%, -50%) rotate(90deg);
-      transform-origin: center center;
-    }
-  }
-
   /* ============ App ============ */
   #app {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    height: 430px;
+    height: 100vh;    /* fallback */
+    height: 100dvh;   /* fill the real viewport (survives URL-bar show/hide on iOS) */
     width: 100vw;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     -webkit-backface-visibility: hidden;
