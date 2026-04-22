@@ -85,6 +85,24 @@
     transform-style: preserve-3d;
   }
 
+  /* ============ Orientation handling ============
+     App is landscape-only. When the phone is held portrait, rotate the
+     entire app 90deg so the user sees landscape regardless of phone
+     orientation. Sized to fill the full screen — width = long axis
+     (100dvh, adapts to URL bar), height = short axis (100vw). */
+  @media (orientation: portrait) {
+    #app {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100vh;     /* fallback */
+      width: 100dvh;    /* long axis of the portrait screen */
+      height: 100vw;    /* short axis of the portrait screen */
+      transform: translate(-50%, -50%) rotate(90deg);
+      transform-origin: center center;
+    }
+  }
+
   /* ----- Top region: readouts + bar ----- */
   .canvas {
     flex: 1 1 55%;
