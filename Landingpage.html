@@ -1684,7 +1684,230 @@
       min-height: 260px;
     }
   }
+  .faq-section {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 78% 8%, rgba(215, 183, 109, 0.13), transparent 28rem),
+      radial-gradient(circle at 12% 32%, rgba(143, 167, 122, 0.14), transparent 30rem),
+      linear-gradient(180deg, var(--hero-bg, #0D1C15), var(--page-bg, #07140F));
+    color: var(--text-primary, #F5F1E7);
+    padding: clamp(72px, 9vw, 120px) 0;
+    border-top: 1px solid var(--accent-border, rgba(215, 183, 109, 0.30));
+    border-bottom: 1px solid var(--accent-border, rgba(215, 183, 109, 0.30));
+  }
 
+  .faq-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .22;
+    background-image:
+      linear-gradient(rgba(215, 183, 109, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(215, 183, 109, 0.03) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
+  }
+
+  .faq-wrap {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, calc(100vw - 40px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, .82fr) minmax(480px, 1fr);
+    gap: clamp(36px, 6vw, 84px);
+    align-items: start;
+  }
+
+  .faq-copy {
+    position: sticky;
+    top: 104px;
+  }
+
+  .faq-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2, 12px);
+    margin-bottom: var(--space-4, 20px);
+    color: var(--accent, #D7B76D);
+    font-family: "JetBrains Mono", monospace;
+    font-size: var(--type-eyebrow, 12px);
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .faq-kicker::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent, #D7B76D);
+    box-shadow: 0 0 0 5px rgba(215, 183, 109, .16);
+  }
+
+  .faq-copy h2 {
+    margin: 0 0 var(--space-4, 20px);
+    color: var(--text-primary, #F5F1E7);
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: .96;
+    letter-spacing: -0.07em;
+    font-weight: 820;
+    text-wrap: balance;
+  }
+
+  .faq-copy p {
+    max-width: 560px;
+    margin: 0;
+    color: var(--text-secondary, #C9C2B4);
+    font-size: clamp(17px, 1.55vw, 21px);
+    line-height: 1.58;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: var(--space-3, 16px);
+  }
+
+  .faq-item {
+    overflow: hidden;
+    border-radius: 22px;
+    background:
+      radial-gradient(circle at 88% 0%, rgba(215, 183, 109, .10), transparent 16rem),
+      rgba(18, 35, 26, .82);
+    border: 1px solid rgba(245, 241, 231, .10);
+    box-shadow:
+      0 22px 54px rgba(7, 20, 15, .26),
+      inset 0 0 0 1px rgba(245, 241, 231, .035);
+    transition: border-color .2s ease, background .2s ease, transform .2s ease;
+  }
+
+  .faq-item:hover,
+  .faq-item[open] {
+    border-color: var(--accent-border, rgba(215, 183, 109, 0.30));
+    background:
+      radial-gradient(circle at 88% 0%, rgba(215, 183, 109, .13), transparent 16rem),
+      var(--raised, #1A2D22);
+    transform: translateY(-1px);
+  }
+
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 34px;
+    gap: var(--space-4, 20px);
+    align-items: center;
+    padding: clamp(20px, 2.4vw, 28px);
+    color: var(--text-primary, #F5F1E7);
+    font-size: clamp(18px, 1.8vw, 23px);
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    color: var(--page-bg, #07140F);
+    background: var(--accent, #D7B76D);
+    box-shadow: 0 10px 22px rgba(215, 183, 109, .16);
+    transition: transform .2s ease;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .faq-icon::after {
+    transform: rotate(90deg);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 30px);
+    margin-top: calc(var(--space-2, 12px) * -1);
+    color: var(--text-secondary, #C9C2B4);
+    font-size: 16px;
+    line-height: 1.62;
+    letter-spacing: -0.018em;
+  }
+
+  .faq-answer strong {
+    color: var(--accent, #D7B76D);
+    font-weight: 800;
+  }
+
+  .faq-note {
+    margin-top: var(--space-5, 24px);
+    padding: var(--space-4, 20px);
+    border-radius: 20px;
+    background: rgba(7, 20, 15, .42);
+    border: 1px solid var(--border, #263A30);
+    color: var(--text-secondary, #C9C2B4);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .faq-note b {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--accent, #D7B76D);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .faq-wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-copy {
+      position: relative;
+      top: auto;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .faq-section {
+      padding: 64px 0;
+    }
+
+    .faq-wrap {
+      width: min(100vw - 28px, 1120px);
+    }
+
+    .faq-item summary {
+      grid-template-columns: 1fr 30px;
+    }
+
+    .faq-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1826,10 +2049,10 @@
   </div>
 </section>
 
-<section class="section cream" id="system"><div class="container"><div class="headsec"><div class="sk">The system</div><h2>Line. Speed. Tempo. Proof.</h2><p>Every golfer has the physical ability to putt well. The difference is having a repeatable process and feedback loop.</p></div><div class="grid"><article class="card"><div><div class="num">01</div><h3>Tempo calibration</h3><p>Train stroke length, capture speed, green speed, slope, grain, and break in one landscape practice screen.</p></div><span class="pill">Practice tool</span></article><article class="card"><div><div class="num">02</div><h3>Strokes gained tracking</h3><p>Log putt length, result, break details, miss tendency, round type, course conditions, and notes.</p></div><span class="pill">Performance data</span></article><article class="card"><div><div class="num">03</div><h3>Practice prescription</h3><p>Turn miss patterns into focused sessions, warm-up plans, and drills that target the putts costing you strokes.</p></div><span class="pill">Coach logic</span></article><article class="card"><div><div class="num">04</div><h3>Green reading card</h3><p>Generate a clean yardage-book card with stroke length, slope reference points, grass type, and green speed.</p></div><span class="pill">On-course utility</span></article><article class="card"><div><div class="num">05</div><h3>Drill library</h3><p>Build sessions from video and text-based drills for fundamentals, face control, speed, reads, and pressure.</p></div><span class="pill">Skill blocks</span></article><article class="card"><div><div class="num">06</div><h3>AI analysis</h3><p>Use logged data to surface trends, problem areas, and suggested focus blocks instead of relying on feel alone.</p></div><span class="pill">Targeted feedback</span></article></div></div></section>
-
 <section class="section white" id="roadmap"><div class="container"><div class="headsec"><div class="sk">60-day roadmap</div><h2>Build the stroke. Then prove it.</h2><p>The roadmap progresses from fundamentals to green reading, tempo control, practice structure, pressure, and validation.</p></div><div class="road"><article class="roadcard"><div class="week">Weeks 1–2</div><h3>Baseline & fundamentals</h3><p>Build setup, start-line checkpoints, stroke references, and first tempo calibration.</p></article><article class="roadcard alt"><div class="week">Weeks 3–4</div><h3>Line and speed</h3><p>Pair read, pace, and capture speed so the ball has a realistic chance to fall.</p></article><article class="roadcard"><div class="week">Weeks 5–6</div><h3>Pressure transfer</h3><p>Turn drills into scoring habits with practice blocks that resemble real rounds.</p></article><article class="roadcard alt"><div class="week">Weeks 7–8</div><h3>Validate gains</h3><p>Retest, review strokes gained, adjust schedule, and carry a clearer process to the course.</p></article></div></div></section>
 
+<section class="faq-section" id="faq" aria-label="Frequently asked questions">  <div class="faq-wrap">    <div class="faq-copy">      <div class="faq-kicker">Questions</div>      <h2>Everything you need to know before you start training.</h2>      <p>        The Putting Method is built to make putting feel simple, measurable, and trainable — not complicated.        Start with a baseline, find the leak, then practice with a clear reason behind every rep.      </p>      <div class="faq-note">        <b>Simple by design</b>        You do not need a tour-level stroke to improve. You need better feedback, better calibration, and a practice system that connects to the scorecard.      </div>    </div>    <div class="faq-list">      <details class="faq-item" open>        <summary>          Who is The Putting Method built for?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          It is built for golfers who want putting to feel more measurable and less random. That includes competitive players, serious amateurs, juniors, college golfers, coaches, and any player who knows they are losing shots on the greens but does not know exactly what to practice.        </div>      </details>      <details class="faq-item">        <summary>          Do I need special hardware or a launch monitor?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          No. The platform is designed around practical training you can use on a putting green, at home, or during tournament prep. The goal is to make <strong>start line, speed, tempo, green reading, and pressure</strong> easier to measure without needing expensive equipment.        </div>      </details>      <details class="faq-item">        <summary>          What makes this different from normal putting drills?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Most drills tell you what to do. The Putting Method helps you understand <strong>why you are doing it</strong>. Your practice connects back to your miss patterns, make rates, speed control, strokes gained trends, and the specific putts that are costing you shots.        </div>      </details>      <details class="faq-item">        <summary>          Can this help if my stroke is already technically solid?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Yes. A solid stroke does not automatically create great on-course putting. Elite putting also requires speed calibration, green-reading confidence, capture-speed control, pressure transfer, and the ability to adjust to changing conditions.        </div>      </details>      <details class="faq-item">        <summary>          How does the baseline diagnostic work?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          The diagnostic identifies the most likely leak in your putting: start line, speed control, green reading, tempo, or pressure. From there, it gives you a focused first practice block instead of leaving you to guess what needs work.        </div>      </details>      <details class="faq-item">        <summary>          What does the dashboard actually track?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          The dashboard is designed to track strokes gained trends, make rates by distance, miss patterns around the hole, speed-control tendencies, and practice progress. The goal is to show whether your training is actually transferring to lower scores.        </div>      </details>      <details class="faq-item">        <summary>          Is this for indoor practice or on-course use?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Both. The Tempo Trainer and drill structure help guide practice sessions, while the green-reading card and performance tracking are built to support real rounds, warm-ups, tournament prep, and post-round review.        </div>      </details>      <details class="faq-item">        <summary>          Why focus so much on putting?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Because putting is the part of golf every player can realistically master. Not every golfer can drive it like a tour player, but almost every golfer has the physical ability to roll the ball on line with good speed. The difference is having a system that makes improvement repeatable.        </div>      </details>    </div>  </div></section>
+    
 <section class="section cream" id="pricing"><div class="container pricewrap"><div class="price"><h3>Premium membership</h3><div class="money"><sup>$</sup>19.99 <span>/mo</span></div><p>Everything needed to diagnose, calibrate, practice, track, and improve without stacking disconnected tools.</p><ul><li>Tempo app and green-reading calibration</li><li>Strokes gained and round logging</li><li>Dashboard trends and tour-style comparisons</li><li>Drill library and practice schedules</li><li>60-day roadmap and limited AI analysis</li></ul><div class="price-actions"><a class="btn btn-primary" href="#join">Start 14-day trial</a></div></div><div class="guarantee"><div class="sk">Trial first</div><h3>No credit card. No guessing.</h3><p>Start with the free baseline experience. If the product does not produce a useful insight and a practice direction, you should not pay for it.</p><div class="stats"><div><strong>14</strong><span>Day trial</span></div><div><strong>$0</strong><span>Credit card required</span></div></div></div></div></section>
 
 <section class="final" id="join"><div class="container"><h2>Make putting feel trainable again.</h2><p>Join the early list and get first access when the baseline diagnostic, tempo trainer, analytics dashboard, and 60-day roadmap open.</p><form class="form" id="form"><input id="email" type="email" placeholder="Email address" required><button class="btn btn-dark">Get early access</button></form><div class="msg" id="msg" role="status"></div></div></section>
