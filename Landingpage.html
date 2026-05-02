@@ -1908,6 +1908,130 @@
       height: 30px;
     }
   }
+  .method-mini {
+    width: min(1120px, calc(100vw - 40px));
+    margin: 0 auto clamp(52px, 6vw, 78px);
+    padding: clamp(28px, 4vw, 42px);
+    border-radius: 32px;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(215, 183, 109, 0.10), transparent 24rem),
+      #FFFDF8;
+    border: 1px solid rgba(7, 20, 15, 0.10);
+    box-shadow: 0 24px 58px rgba(7, 20, 15, 0.07);
+  }
+
+  .method-mini-head {
+    max-width: 780px;
+    margin: 0 auto var(--space-6);
+    text-align: center;
+  }
+
+  .method-mini-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    color: var(--accent-secondary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: var(--type-eyebrow);
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .method-mini-kicker::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--accent-secondary);
+    box-shadow: 0 0 0 4px rgba(143, 167, 122, .16);
+  }
+
+  .method-mini-head h2 {
+    margin: 0 auto var(--space-3);
+    max-width: 720px;
+    color: var(--nav-text);
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: .98;
+    letter-spacing: -0.065em;
+    font-weight: 820;
+    text-wrap: balance;
+  }
+
+  .method-mini-head p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: rgba(7, 20, 15, .70);
+    font-size: clamp(15px, 1.35vw, 18px);
+    line-height: 1.55;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .method-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  .method-mini-card {
+    position: relative;
+    min-height: 150px;
+    padding: var(--space-4);
+    border-radius: 22px;
+    background: #FFFFFF;
+    border: 1px solid rgba(7, 20, 15, .10);
+    box-shadow: 0 16px 38px rgba(7, 20, 15, .06);
+  }
+
+  .method-mini-num {
+    margin-bottom: var(--space-3);
+    color: var(--accent);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .14em;
+  }
+
+  .method-mini-card h3 {
+    margin: 0 0 var(--space-2);
+    color: var(--nav-text);
+    font-size: clamp(18px, 1.7vw, 24px);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+    font-weight: 820;
+  }
+
+  .method-mini-card p {
+    margin: 0;
+    color: rgba(7, 20, 15, .66);
+    font-size: 13px;
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+  }
+
+  @media (max-width: 1050px) {
+    .method-mini-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 680px) {
+    .method-mini {
+      width: min(100vw - 28px, 1120px);
+      padding: var(--space-5);
+      margin-bottom: var(--space-7);
+    }
+
+    .method-mini-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .method-mini-card {
+      min-height: auto;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1949,7 +2073,9 @@
         </div>
       </section>
     </main>
-
+    
+  <section class="method-mini" aria-label="The Putting Method system overview">  <div class="method-mini-head">    <div class="method-mini-kicker">The system</div>    <h2>Six pieces. One putting feedback loop.</h2>    <p>      The platform connects the parts of putting that actually lower scores: tempo, speed, start line,      green reading, practice structure, and proof that the work is transferring.    </p>  </div>  <div class="method-mini-grid">    <article class="method-mini-card">      <div class="method-mini-num">01</div>      <h3>Tempo</h3>      <p>Calibrate rhythm and stroke length so distance control becomes repeatable.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">02</div>      <h3>Speed</h3>      <p>Train capture speed, lag windows, and pace control from real distances.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">03</div>      <h3>Start line</h3>      <p>Make face control measurable before guessing at reads or mechanics.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">04</div>      <h3>Green reading</h3>      <p>Build course-ready references for slope, stimp, grain, and break.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">05</div>      <h3>Practice</h3>      <p>Turn miss patterns into focused blocks instead of random putting drills.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">06</div>      <h3>Proof</h3>      <p>Track strokes gained, make rates, and trends to confirm progress.</p>    </article>  </div></section>
+    
     <section class="diagnostic-section" id="method" aria-label="Putting baseline diagnostic">
       <div class="diagnostic-anchor" id="start" aria-hidden="true"></div>
       <div class="diagnostic-wrap">
