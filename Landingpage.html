@@ -6,7 +6,7 @@
 <title>The Putting Method — Hero Prototype</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@1,9..144,700,50&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --page-bg: #07140F;
@@ -147,6 +147,32 @@
     font-weight: 600;
     letter-spacing: .14em;
     text-transform: uppercase;
+  }
+
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .wordmark .roll {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--nav-text);
+    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+  }
+
+  .wordmark .metrics {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--accent);
+    letter-spacing: -0.045em;
+    margin-left: 2px;
   }
 
   .nav-links {
@@ -2039,9 +2065,8 @@
 <body>
   <div class="site">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="The Putting Method home">
-        <span class="brand-mark">PM</span>
-        <span>The Putting Method<small>Line · Speed · Tempo · Proof</small></span>
+      <a class="wordmark" href="#top" aria-label="RollMetrics home">
+        <span class="roll">Roll</span><span class="metrics">Metrics</span>
       </a>
       <div class="nav-links" aria-label="Main links">
         <a href="#trainer">Trainer</a>
