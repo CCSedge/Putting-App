@@ -605,10 +605,16 @@
     transition: border-color .18s ease, background .18s ease, transform .18s ease;
   }
 
-  .diagnostic-option:hover,
-  .diagnostic-option.is-selected {
+  .diagnostic-option:hover {
     border-color: var(--accent-border);
     background: var(--raised);
+    transform: translateY(-1px);
+  }
+
+  .diagnostic-option.is-selected {
+    border-color: var(--accent);
+    background: rgba(215, 183, 109, .08);
+    box-shadow: inset 0 0 0 1px var(--accent), 0 12px 28px rgba(215, 183, 109, .15);
     transform: translateY(-1px);
   }
 
@@ -695,6 +701,16 @@
     font-size: 12px;
     letter-spacing: .14em;
     text-transform: uppercase;
+  }
+
+  .practice-target {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+  }
+
+  .practice-target strong {
+    color: var(--accent-secondary);
   }
 
   .result-actions {
@@ -2073,7 +2089,7 @@
         <a href="#method">System</a>
         <a href="#analytics">Dashboard</a>
         <a href="#pricing">Pricing</a>
-        <a class="nav-cta" href="#start">Start the diagnostic</a>
+        <a class="nav-cta" href="#start">Find where to start</a>
       </div>
     </nav>
 
@@ -2100,12 +2116,12 @@
       </section>
     </main>
      
-    <section class="diagnostic-section" id="method" aria-label="Putting baseline diagnostic">
+    <section class="diagnostic-section" id="method" aria-label="Putting baseline">
       <div class="method-mini-grid">    <article class="method-mini-card">      <div class="method-mini-num">01</div>      <h3>Tempo</h3>      <p>A repeatable rhythm and a calibrated stroke length.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">02</div>      <h3>Speed</h3>      <p>Driven to maximize the capture size of the hole.</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">03</div>      <h3>Start line</h3>      <p>Improved green reading and startline visualization</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">04</div>      <h3>Green reading</h3>      <p>Understand all the variables and how they influence the ball</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">05</div>      <h3>Practice</h3>      <p>Data driven improvements and more efficent practice</p>    </article>    <article class="method-mini-card">      <div class="method-mini-num">06</div>      <h3>Measure and Grow</h3>      <p>Strokes gained, make rates, and trends round over round.</p>    </article>  </div>
       <div class="diagnostic-anchor" id="start" aria-hidden="true"></div>
       <div class="diagnostic-wrap">
         <div class="diagnostic-copy">
-          <div class="diagnostic-kicker">Begin with a diagnosis</div>
+          <div class="diagnostic-kicker">Find where to start</div>
           <h2>Targeted Practice</h2>
           <p>Five focus areas — start line, speed, green reading, tempo, pressure. A few questions to develop a plan.</p>
           <ul class="diagnostic-points">
@@ -2118,7 +2134,7 @@
         <div class="diagnostic-panel" data-diagnostic>
           <div class="diagnostic-quiz" data-quiz>
             <div class="diagnostic-topline">
-              <span class="diagnostic-label">Baseline diagnostic</span>
+              <span class="diagnostic-label">Putting baseline</span>
               <span class="diagnostic-step" data-step>Step 1 of 6</span>
             </div>
             <div class="diagnostic-progress" aria-hidden="true"><span data-progress></span></div>
@@ -2135,18 +2151,22 @@
 
           <div class="diagnostic-result" data-result aria-live="polite">
             <div class="diagnostic-topline">
-              <span class="diagnostic-label">Your first read</span>
-              <span class="diagnostic-step">Instant insight</span>
+              <span class="diagnostic-label">Your starting point</span>
+              <span class="diagnostic-step">Baseline complete</span>
             </div>
-            <h3 data-result-title>Your priority focus area is speed control.</h3>
-            <p class="diagnostic-insight" data-result-copy>Distance control and capture speed are the priority for your first sessions.</p>
+            <h3 data-result-title>Your starting point is speed control.</h3>
+            <p class="diagnostic-insight" data-result-copy>3-putts come from the first putt, not the second. When the first putt finishes outside 4 feet, even tour pros make less than half. Speed is the controllable variable.</p>
             <div class="practice-block">
-              <strong>First practice block</strong>
-              <span data-result-drill>Run a 10, 20, 30, and 40-foot ladder. Finish each ball inside a 24-inch window and track short vs. long misses.</span>
+              <strong>First drill block</strong>
+              <span data-result-drill>Lag ladder. Hit four putts each from 10, 20, 30, and 40 feet. Track proximity to the hole — short or long doesn't matter, only how close.</span>
+              <div class="practice-target">
+                <strong>Target</strong>
+                <span data-result-success>Every distance averaging inside 24 inches across three sessions.</span>
+              </div>
             </div>
             <div class="result-actions">
               <a class="diagnostic-convert" href="#pricing">Build my full plan</a>
-              <button class="diagnostic-reset" type="button" data-reset>Retake diagnostic</button>
+              <button class="diagnostic-reset" type="button" data-reset>Start over</button>
             </div>
           </div>
         </div>
@@ -2202,11 +2222,11 @@
 
 <section class="section white" id="roadmap"><div class="container"><div class="headsec"><div class="sk">60-day roadmap</div><h2>Build the stroke. Then validate the work.</h2><p>Eight weeks. Fundamentals to validation.</p></div><div class="road"><article class="roadcard"><div class="week">Weeks 1–2</div><h3>Baseline & fundamentals</h3><p>Setup, start-line checkpoints, first tempo calibration.</p></article><article class="roadcard alt"><div class="week">Weeks 3–4</div><h3>Line and speed</h3><p>Read, pace, and capture speed — paired together.</p></article><article class="roadcard"><div class="week">Weeks 5–6</div><h3>Pressure transfer</h3><p>Practice blocks that resemble real rounds.</p></article><article class="roadcard alt"><div class="week">Weeks 7–8</div><h3>Validate gains</h3><p>Retest, review strokes gained, take it to the course.</p></article></div></div></section>
 
-<section class="faq-section" id="faq" aria-label="Frequently asked questions">  <div class="faq-wrap">    <div class="faq-copy">      <div class="faq-kicker">Questions</div>      <h2>Common questions, answered plainly.</h2>      <p>        Start with a baseline. Identify the priority. Practice with a reason.      </p>      <div class="faq-note">        <b>A system, not a teacher</b>        A repeatable putting process — not a brand built around a personality.      </div>    </div>    <div class="faq-list">      <details class="faq-item" open>        <summary>          Who is RollMetrics built for?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Competitive players, serious amateurs, juniors, college golfers, and coaches who want putting to feel measurable instead of random.        </div>      </details>      <details class="faq-item">        <summary>          Do I need special hardware or a launch monitor?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          No. The system works on a putting green, at home, or during tournament prep — without specialized equipment.        </div>      </details>      <details class="faq-item">        <summary>          What makes this different from normal putting drills?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Most drills tell you what to do. RollMetrics tells you <strong>why</strong> — and connects every rep to your miss patterns, make rates, and strokes-gained trends.        </div>      </details>      <details class="faq-item">        <summary>          Can this help if my stroke is already technically solid?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Yes. A solid stroke is not enough on its own — speed calibration, capture-speed control, and pressure transfer are equally trainable, and equally measurable.        </div>      </details>      <details class="faq-item">        <summary>          How does the baseline diagnostic work?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          It identifies which of five focus areas — start line, speed, green reading, tempo, or pressure — is your priority, then prescribes the first practice block.        </div>      </details>      <details class="faq-item">        <summary>          What does the dashboard actually track?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Strokes-gained trends, make rates by distance, miss patterns around the hole, and practice progress — round over round.        </div>      </details>      <details class="faq-item">        <summary>          Is this for indoor practice or on-course use?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Both. The app and drills guide practice. The green-reading card and dashboard support warm-ups, rounds, and post-round review.        </div>      </details>      <details class="faq-item">        <summary>          Why focus so much on putting?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Because putting is the one part of golf where a tournament player and a 12-handicap share the same physical ceiling. The only thing missing for most players is a repeatable process.        </div>      </details>    </div>  </div></section>
+<section class="faq-section" id="faq" aria-label="Frequently asked questions">  <div class="faq-wrap">    <div class="faq-copy">      <div class="faq-kicker">Questions</div>      <h2>Common questions, answered plainly.</h2>      <p>        Start with a baseline. Identify the priority. Practice with a reason.      </p>      <div class="faq-note">        <b>A system, not a teacher</b>        A repeatable putting process — not a brand built around a personality.      </div>    </div>    <div class="faq-list">      <details class="faq-item" open>        <summary>          Who is RollMetrics built for?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Competitive players, serious amateurs, juniors, college golfers, and coaches who want putting to feel measurable instead of random.        </div>      </details>      <details class="faq-item">        <summary>          Do I need special hardware or a launch monitor?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          No. The system works on a putting green, at home, or during tournament prep — without specialized equipment.        </div>      </details>      <details class="faq-item">        <summary>          What makes this different from normal putting drills?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Most drills tell you what to do. RollMetrics tells you <strong>why</strong> — and connects every rep to your miss patterns, make rates, and strokes-gained trends.        </div>      </details>      <details class="faq-item">        <summary>          Can this help if my stroke is already technically solid?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Yes. A solid stroke is not enough on its own — speed calibration, capture-speed control, and pressure transfer are equally trainable, and equally measurable.        </div>      </details>      <details class="faq-item">        <summary>          How does the putting baseline work?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          It identifies which of five focus areas — start line, speed, green reading, tempo, or pressure — is your priority, then prescribes the first practice block.        </div>      </details>      <details class="faq-item">        <summary>          What does the dashboard actually track?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Strokes-gained trends, make rates by distance, miss patterns around the hole, and practice progress — round over round.        </div>      </details>      <details class="faq-item">        <summary>          Is this for indoor practice or on-course use?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Both. The app and drills guide practice. The green-reading card and dashboard support warm-ups, rounds, and post-round review.        </div>      </details>      <details class="faq-item">        <summary>          Why focus so much on putting?          <span class="faq-icon" aria-hidden="true"></span>        </summary>        <div class="faq-answer">          Because putting is the one part of golf where a tournament player and a 12-handicap share the same physical ceiling. The only thing missing for most players is a repeatable process.        </div>      </details>    </div>  </div></section>
     
 <section class="section cream" id="pricing"><div class="container pricewrap"><div class="price"><h3>Premium membership</h3><div class="money"><sup>$</sup>19.99 <span>/mo</span></div><p>Diagnose, calibrate, practice, validate. One system.</p><ul><li>Tempo app and green-reading calibration</li><li>Strokes gained and round logging</li><li>Dashboard trends and tour-style comparisons</li><li>Drill library and practice diary</li><li>60-day roadmap and limited AI analysis</li></ul><div class="price-actions"><a class="btn btn-primary" href="#join">Start 14-day trial</a></div></div><div class="guarantee"><div class="sk">Trial first</div><h3>No credit card. No guessing.</h3><p>Start with the free baseline. If the system does not give you a useful direction, do not pay for it.</p><div class="stats"><div><strong>14</strong><span>Day trial</span></div><div><strong>$0</strong><span>Credit card required</span></div></div></div></div></section>
 
-<section class="final" id="join"><div class="container"><h2>Build the baseline. Calibrate the stroke. Validate the work.</h2><p>Get first access when the diagnostic, tempo app, dashboard, and roadmap open.</p><form class="form" id="form"><input id="email" type="email" placeholder="Email address" required><button class="btn btn-dark">Get early access</button></form><div class="msg" id="msg" role="status"></div></div></section>
+<section class="final" id="join"><div class="container"><h2>Build the baseline. Calibrate the stroke. Validate the work.</h2><p>Get first access when the baseline, tempo app, dashboard, and roadmap open.</p><form class="form" id="form"><input id="email" type="email" placeholder="Email address" required><button class="btn btn-dark">Get early access</button></form><div class="msg" id="msg" role="status"></div></div></section>
 <footer class="footer"><div class="container foot"><div><strong>RollMetrics</strong> · Personal stroke. Proven process.</div><div>Diagnose · Calibrate · Validate</div></div></footer>
   </div>
 
@@ -2214,92 +2234,97 @@
 (function() {
   const questions = [
     {
-      title: 'What putt costs you the most confidence?',
-      helper: 'Choose the situation that feels most expensive during a real round.',
+      title: 'Which of these putts feels least automatic right now?',
+      helper: 'Pick the one your stroke can\'t quite trust yet.',
       options: [
-        ['3–6 footers that should be automatic', 'startline'],
-        ['25–40 foot lag putts', 'speed'],
-        ['Breaking putts where read and speed fight', 'read'],
-        ['Tournament or money-game putts', 'pressure']
+        ['A 5-footer with break', 'startline'],
+        ['A 35-foot lag putt', 'speed'],
+        ['A 15-footer with significant slope', 'read'],
+        ['An 8-footer to win a match', 'pressure']
       ]
     },
     {
-      title: 'Where do most of your missed putts finish?',
-      helper: 'The miss pattern usually tells you what should be trained first.',
+      title: 'When you miss a 10-foot putt, where does the ball usually finish?',
+      helper: 'The miss pattern points to the cause.',
       options: [
         ['Low side of the hole', 'read'],
         ['High side of the hole', 'speed'],
-        ['Short and never had a chance', 'speed'],
-        ['Pushed or pulled off the intended line', 'startline']
+        ['Short, on line', 'speed'],
+        ['Past the hole, off line', 'startline']
       ]
     },
     {
-      title: 'Which speed-control mistake shows up most?',
-      helper: 'Speed control drives three-putt avoidance and makes green reading easier.',
+      title: 'On your typical lag putt from 30 feet, what\'s the most common issue?',
+      helper: 'Pick the closest match.',
       options: [
-        ['Leaving long putts 4+ feet short', 'speed'],
-        ['Running comebackers outside 3 feet', 'speed'],
-        ['Changing tempo from putt to putt', 'tempo'],
-        ['Choosing a safer line because speed feels uncertain', 'read']
+        ['It comes up short', 'speed'],
+        ['It rolls 4+ feet past', 'speed'],
+        ['My tempo varies — never the same stroke twice', 'tempo'],
+        ['I aim safer because I don\'t trust my pace', 'read']
       ]
     },
     {
-      title: 'What condition changes your putting the most?',
-      helper: 'This helps separate a stroke issue from a calibration issue.',
+      title: 'Which conditions are hardest for you to adjust to?',
+      helper: 'Pick what you\'ve struggled with most often.',
       options: [
-        ['Fast greens', 'tempo'],
+        ['Fast greens (stimp 11+)', 'tempo'],
         ['Slow greens', 'speed'],
         ['Grainy Bermuda', 'read'],
-        ['Severe slope or tiered greens', 'read']
+        ['Severe slope', 'read']
       ]
     },
     {
-      title: 'What do you practice least consistently?',
-      helper: 'The missing piece is often the one that makes the rest of the work transfer.',
+      title: 'Which gets the least time in your practice?',
+      helper: 'The honest answer — what you skip.',
       options: [
-        ['Start line gates or face control', 'startline'],
+        ['Stroke mechanics — face, path, contact', 'startline'],
         ['Tempo and stroke length calibration', 'tempo'],
-        ['Structured green-reading reps', 'read'],
-        ['Pressure tests that simulate score consequences', 'pressure']
+        ['Reading break, slope, and grain', 'read'],
+        ['Putting under simulated pressure', 'pressure']
       ]
     },
     {
-      title: 'What would make the next 30 days feel successful?',
-      helper: 'The system turns this goal into a measurable plan.',
+      title: 'Which of these would change the most about your scoring?',
+      helper: 'Pick the gain that would matter most.',
       options: [
-        ['Stop three-putting', 'speed'],
-        ['Make more putts inside 8 feet', 'startline'],
-        ['Read breaking putts with more conviction', 'read'],
-        ['Feel ready over tournament putts', 'pressure']
+        ['Eliminating 3-putts from outside 25 feet', 'speed'],
+        ['Making more putts from 6 to 10 feet', 'startline'],
+        ['Holing more 10 to 15 footers', 'read'],
+        ['Trusting my stroke under pressure', 'pressure']
       ]
     }
   ];
 
   const results = {
     speed: {
-      title: 'Your priority focus area is speed control.',
-      copy: 'Distance control and capture speed are the priority. Calibrate stroke length before changing mechanics.',
-      drill: 'Run a 10, 20, 30, and 40-foot ladder. Finish each ball inside a 24-inch window and track whether misses finish short or long.'
+      title: 'Your starting point is speed control.',
+      copy: '3-putts come from the first putt, not the second. When the first putt finishes outside 4 feet, even tour pros make less than half. Speed is the controllable variable.',
+      drill: 'Lag ladder. Hit four putts each from 10, 20, 30, and 40 feet. Track proximity to the hole — short or long doesn\'t matter, only how close.',
+      success: 'Every distance averaging inside 24 inches across three sessions.'
     },
     startline: {
-      title: 'Your priority focus area is start line.',
-      copy: 'Face control and launch direction. The goal is not to change the stroke — it is to validate that you can start the ball where you intend.',
-      drill: 'Set a gate 18 inches in front of the ball. Hit 30 putts from 5–8 feet and record how many start online before judging make or miss.'
+      title: 'Your starting point is start line.',
+      copy: 'A 1-degree face error at impact sends the ball roughly 4 inches off line at 20 feet. Before changing reads or mechanics, validate that the ball is starting where you intend.',
+      drill: 'Gate drill. Set two tees 2 inches wider than your putter head, 18 inches in front of the ball. Hit 30 putts from 6 feet and count clean passes through the gate.',
+      success: '26 of 30 clean — a repeatable 87% start-line rate.'
     },
     read: {
-      title: 'Your priority focus area is green reading.',
-      copy: 'Read, speed, and slope calibration are not matching. Build a reliable reference for how break changes by distance, stimp, and capture speed.',
-      drill: 'Pick one 12-foot breaking putt. Hit three capture speeds — die, 12 inches past, and 24 inches past — and note how much the start line changes.'
+      title: 'Your starting point is green reading.',
+      copy: 'The same 12-footer reads differently at die-speed than at firm-speed. Pick a capture speed first, then the break becomes a single answer instead of a moving target.',
+      drill: 'Capture-speed test. One breaking 12-footer. Three putts at die-speed, three at 12 inches past, three at 24 inches past. Note how the apex shifts.',
+      success: 'A consistent read at one chosen capture speed across stimps.'
     },
     tempo: {
-      title: 'Your priority focus area is tempo calibration.',
-      copy: 'Inconsistent rhythm and stroke length. A stable tempo makes speed predictable when green speed or pressure changes.',
-      drill: 'Use the Tempo Trainer for 5, 10, 20, and 30-foot putts. Match the same rhythm while changing only stroke length.'
+      title: 'Your starting point is tempo.',
+      copy: 'Most amateurs change tempo and stroke length together. Tour players hold tempo constant and let only stroke length change with distance. That is where consistency comes from.',
+      drill: 'Tempo Trainer at 5, 10, 20, and 30 feet. Same audible rhythm — only the stroke gets longer. No scoring, just rhythm.',
+      success: 'The same 2:1 tempo holding from 5 feet through 30.'
     },
     pressure: {
-      title: 'Your priority focus area is pressure transfer.',
-      copy: 'The stroke works in practice but not under consequence. Make practice feel more like the putts that matter.',
-      drill: 'Create a 12-putt test from 4–8 feet. You must restart if you miss two in a row. Track score, heart rate feel, and miss direction.'
+      title: 'Your starting point is pressure transfer.',
+      copy: 'When a stroke works in practice but breaks down in tournaments, the gap is structure — not skill. Practice has no consequence; rounds do. Add consequence to practice.',
+      drill: 'Stack drill. Hit 12 putts from 4 to 8 feet. Every miss restarts the count. Track time, score, and miss direction.',
+      success: 'Completing the stack inside 20 minutes, three sessions in a row.'
     }
   };
 
@@ -2318,6 +2343,7 @@
   const resultTitle = document.querySelector('[data-result-title]');
   const resultCopy = document.querySelector('[data-result-copy]');
   const resultDrill = document.querySelector('[data-result-drill]');
+  const resultSuccess = document.querySelector('[data-result-success]');
 
   let current = 0;
   const answers = new Array(questions.length).fill(null);
@@ -2347,7 +2373,7 @@
     });
 
     backBtn.style.visibility = current === 0 ? 'hidden' : 'visible';
-    nextBtn.textContent = current === questions.length - 1 ? 'Show insight' : 'Continue';
+    nextBtn.textContent = current === questions.length - 1 ? 'See my starting point' : 'Continue';
     nextBtn.disabled = !answers[current];
   }
 
@@ -2363,6 +2389,7 @@
     resultTitle.textContent = insight.title;
     resultCopy.textContent = insight.copy;
     resultDrill.textContent = insight.drill;
+    if (resultSuccess) resultSuccess.textContent = insight.success;
     quiz.style.display = 'none';
     result.classList.add('is-visible');
   }
